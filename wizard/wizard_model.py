@@ -88,3 +88,4 @@ class AccountMoveReclassifyWizard(models.TransientModel):
                                     }
                             debit_id = self.env['account.move.line'].with_context(check_move_validity=False).create(vals_debit)
                     move.reclassify_id = move_id.id
+                    move_id.action_post()
