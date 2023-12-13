@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="reclassify_account_move_form" model="ir.ui.view">
+	<field name="name">reclassify.account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"></field>
+	<field name="arch" type="xml">
+		<xpath expr="//notebook" position="before">
+			<group>
+				<field name="reclassify_id"
+					string="Asiento Reclasificacion"
+					readonly="1" />
+			</group>
+		</xpath>
+        </field>
+    </record>
+
+
+</odoo>
