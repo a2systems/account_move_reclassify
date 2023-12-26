@@ -11,3 +11,12 @@ class AccountMove(models.Model):
             string='Asiento Reclasificacion',
             copy=False
             )
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    reclassify_id = fields.Many2one(
+            comodel_name='account.move',
+            string='Asiento Reclasificacion',
+            copy=False
+            )

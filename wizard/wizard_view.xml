@@ -14,7 +14,9 @@
 				    <field name="dest_account_id" 
 					    options="{'no_create': True, 'no_create_edit':True}" 
 					    />
-				     <field name="percent" />
+				    <field name="percent" />
+                                    <field name="sum_debits" readonly="1"/>
+                                    <field name="sum_credits" readonly="1"/>
                            </group>
                     </sheet>
                     <footer>
@@ -33,5 +35,16 @@
 	    <field name="target">new</field>
             <field name="binding_view_types">list</field>
     </record>
+
+
+    <record id="account_move_line_reclassify_wizard_action" model="ir.actions.act_window">
+            <field name="name">Reclasificar Apuntes</field>
+            <field name="res_model" >account.move.reclassify.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="binding_model_id" ref="account.model_account_move_line"></field>
+            <field name="target">new</field>
+            <field name="binding_view_types">list</field>
+    </record>
+
 
 </odoo>
